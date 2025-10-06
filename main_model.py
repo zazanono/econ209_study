@@ -1,8 +1,8 @@
 # Simple short-run macroeconomic model
 #
 
-def calculate_ae(a, i, g, x, b, t, m, y):
-    auto_expenditure = a + i + g + x
-    induced_expenditure = (b * (1 - t) - m)
-    ae = auto_expenditure + induced_expenditure * y
+def calculate_ae(data):
+    auto_expenditure = data["a"] + data["i"] + data["g"] + data["x"]
+    induced_expenditure = (data["b"] * (1 - data["t"]) - data["m"])
+    ae = auto_expenditure + induced_expenditure * data["y"]
     return ae, auto_expenditure, induced_expenditure
